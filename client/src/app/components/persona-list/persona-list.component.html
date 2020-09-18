@@ -1,0 +1,26 @@
+<div class="col-md-4" *ngFor="let person of persons">
+    <div class="card text-center">
+      <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+        {{game.title}}
+        <button class="btn btn-danger" (click)="deletePersona(persona.id)">
+          <i class="far fa-trash-alt"></i>
+        </button>
+      </div>
+      <div class="card-body">
+        <p>{{persona.nombres}}</p>
+        <p>{{persona.apellidos}}</p>
+        <p>{{persona.idtipodocumento}}</p>
+        <p>{{persona.documento}}</p>
+        <p>{{persona.lugarresidencia}}</p>
+        <p>{{persona.fechanacimiento}}</p>
+        <p>{{persona.email}}</p>
+        <p>{{persona.telefono}}</p>
+        <p>{{persona.usuario}}</p>
+        <p>{{persona.contrasena}}</p>
+        <p>Created At {{game.created_at | date: 'yyyy-MM-dd'}}</p>
+        <a [routerLink]="['/persona/edit', persona.id]" class="btn btn-info btn-block">
+          EDIT PERSONA
+        </a>
+      </div>
+    </div>
+  </div>

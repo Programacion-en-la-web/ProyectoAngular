@@ -1,0 +1,58 @@
+<div class="col-md-4 offset-md-2">
+    <div class="card">
+      <div class="card-body">
+        <form action="">
+          <div class="form-group">
+            <input type="text" name="nombres" [(ngModel)]="persona.nombres" placeholder="Nombres" class="form-control" autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" name="apellidos" [(ngModel)]="persona.apellidos" placeholder="Apellidos" class="form-control" autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" name="idtipododocumento" [(ngModel)]="persona.idtipododocumento" placeholder="Tipo de documento" class="form-control" autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" name="documento" [(ngModel)]="persona.documento" placeholder="Documento" class="form-control" autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" name="lugarresidecia" [(ngModel)]="persona.lugarresidecia" placeholder="Lugar de residencia" class="form-control" autofocus>
+          </div>
+          <div class="form-group">
+            <input type="date" name="fechanacimiento" [(ngModel)]="persona.fechanacimiento" placeholder="Fecha de nacimiento" class="form-control" autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" name="email" [(ngModel)]="persona.email" placeholder="Email" class="form-control" autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" name="telefono" [(ngModel)]="persona.telefono" placeholder="Telefono" class="form-control" autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" name="usuario" [(ngModel)]="persona.usuario" placeholder="Usuario" class="form-control" autofocus>
+          </div>
+          <div class="form-group">
+            <input type="password" name="contrasena" [(ngModel)]="persona.contrasena" placeholder="Contrasena" class="form-control" autofocus>
+          </div>
+          <button class="btn btn-success btn-block" (click)="edit ? updatePersona() : saveNewPersona()">
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4">
+    <div class="card card-body text-center">
+      <p>{{persona.id}}.</p> 
+      <p>{{persona.nombres == '' ? 'Escribe tu nombre' : persona.nombres}}</p>
+      <p>{{persona.apellidos == '' ? 'Escribe tu apellido' : persona.apellidos}}</p>
+      <p>{{persona.idtipodocumento == '' ? 'Escribe tu tipo de documento' : persona.idtipodocumento}}</p>
+      <p>{{persona.documento == '' ? 'Escribe tu documento' : persona.documento}}</p>
+      <p>{{persona.lugarresidencia == '' ? 'Escribe tu lugar de residencia' : persona.residencia}}</p>
+      <p>{{persona.fechanacimiento == '' ? 'Escribe tu fechanacimiento' : persona.fechanacimiento}}</p>
+      <p>{{persona.email == '' ? 'Escribe tu email' : persona.email}}</p>
+      <p>{{persona.telefono == '' ? 'Escribe tu telefono' : persona.telefono}}</p>
+      <p>{{persona.usuario == '' ? 'Escribe tu usuario' : persona.usuario}}</p>
+      <p>{{persona.contrasena == '' ? 'Escribe tu contrasena' : persona.contrasena}}</p>
+      <p>{{persona.created_at | date: 'yyyy-MM-dd'}}</p>
+    </div>
+  </div>
