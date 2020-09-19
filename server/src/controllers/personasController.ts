@@ -11,14 +11,15 @@ class PersonasController {
         });
     }
 
-    public async getOne (req: Request, res: Response): Promise<any> {
-        const { id } = req.params;
-        const personas = await pool.query ('SELECT * FROM personas WHERE id = ?', [id]);
-        console.log(personas)
-        if (personas.length > 0) {
-            return res.json(personas[0]);
-        }
-        res.status(404).json({text: "La persona no existe"});
+    public async getOne(req: Request, res: Response): Promise<void>{
+        const {id}=req.params;
+        await pool.query('SELECT * FROM persona WHERE id_persona = ?', [id], (error, result) => {
+            if (error) throw error;
+
+            res.json(result);
+            
+            /* res.status(404).json({text: "The person doesn't exists"}); */
+        });
     }
 
     public async create (req: Request, res: Response): Promise<void> {

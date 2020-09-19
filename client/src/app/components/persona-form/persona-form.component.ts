@@ -24,7 +24,7 @@ export class PersonaFormComponent implements OnInit {
     email: '',
     telefono: 0,
     usuario: '',
-    contraseña: '',
+    contrasena: '',
     created_at: new Date()
   };
 

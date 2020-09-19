@@ -9,13 +9,13 @@
             <input type="text" name="apellidos" [(ngModel)]="persona.apellidos" placeholder="Apellidos" class="form-control" autofocus>
           </div>
           <div class="form-group">
-            <input type="text" name="idtipododocumento" [(ngModel)]="persona.idtipododocumento" placeholder="Tipo de documento" class="form-control" autofocus>
+            <input type="number" name="idtipododocumento" [(ngModel)]="persona.idtipodocumento" placeholder="Tipo de documento" class="form-control" autofocus>
           </div>
           <div class="form-group">
-            <input type="text" name="documento" [(ngModel)]="persona.documento" placeholder="Documento" class="form-control" autofocus>
+            <input type="number" name="documento" [(ngModel)]="persona.documento" placeholder="Documento" class="form-control" autofocus>
           </div>
           <div class="form-group">
-            <input type="text" name="lugarresidecia" [(ngModel)]="persona.lugarresidecia" placeholder="Lugar de residencia" class="form-control" autofocus>
+            <input type="text" name="lugarresidencia" [(ngModel)]="persona.lugarresidencia" placeholder="Lugar de residencia" class="form-control" autofocus>
           </div>
           <div class="form-group">
             <input type="date" name="fechanacimiento" [(ngModel)]="persona.fechanacimiento" placeholder="Fecha de nacimiento" class="form-control" autofocus>
@@ -24,7 +24,7 @@
             <input type="text" name="email" [(ngModel)]="persona.email" placeholder="Email" class="form-control" autofocus>
           </div>
           <div class="form-group">
-            <input type="text" name="telefono" [(ngModel)]="persona.telefono" placeholder="Telefono" class="form-control" autofocus>
+            <input type="number" name="telefono" [(ngModel)]="persona.telefono" placeholder="Telefono" class="form-control" autofocus>
           </div>
           <div class="form-group">
             <input type="text" name="usuario" [(ngModel)]="persona.usuario" placeholder="Usuario" class="form-control" autofocus>
@@ -45,12 +45,11 @@
       <p>{{persona.id}}.</p> 
       <p>{{persona.nombres == '' ? 'Escribe tu nombre' : persona.nombres}}</p>
       <p>{{persona.apellidos == '' ? 'Escribe tu apellido' : persona.apellidos}}</p>
-      <p>{{persona.idtipodocumento == '' ? 'Escribe tu tipo de documento' : persona.idtipodocumento}}</p>
-      <p>{{persona.documento == '' ? 'Escribe tu documento' : persona.documento}}</p>
-      <p>{{persona.lugarresidencia == '' ? 'Escribe tu lugar de residencia' : persona.residencia}}</p>
-      <p>{{persona.fechanacimiento == '' ? 'Escribe tu fechanacimiento' : persona.fechanacimiento}}</p>
+      <p>{{persona.idtipodocumento == 0 ? 'Escribe tu tipo de documento' : persona.idtipodocumento}}</p>
+      <p>{{persona.documento == 0 ? 'Escribe tu documento' : persona.documento}}</p>
+      <p>{{persona.lugarresidencia == '' ? 'Escribe tu lugar de residencia' : persona.lugarresidencia}}</p>
       <p>{{persona.email == '' ? 'Escribe tu email' : persona.email}}</p>
-      <p>{{persona.telefono == '' ? 'Escribe tu telefono' : persona.telefono}}</p>
+      <p>{{persona.telefono == 0 ? 'Escribe tu telefono' : persona.telefono}}</p>
       <p>{{persona.usuario == '' ? 'Escribe tu usuario' : persona.usuario}}</p>
       <p>{{persona.contrasena == '' ? 'Escribe tu contrasena' : persona.contrasena}}</p>
       <p>{{persona.created_at | date: 'yyyy-MM-dd'}}</p>

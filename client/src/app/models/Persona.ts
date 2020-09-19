@@ -11,6 +11,6 @@ export interface Persona {
     email?: string,
     telefono?: number,
     usuario?: string,
-    contraseña?: string,
+    contrasena?: string,
     created_at?: Date
 };

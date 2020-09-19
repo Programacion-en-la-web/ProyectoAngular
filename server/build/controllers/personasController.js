@@ -26,12 +26,12 @@ class PersonasController {
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const personas = yield database_1.default.query('SELECT * FROM personas WHERE id = ?', [id]);
-            console.log(personas);
-            if (personas.length > 0) {
-                return res.json(personas[0]);
-            }
-            res.status(404).json({ text: "La persona no existe" });
+            yield database_1.default.query('SELECT * FROM persona WHERE id_persona = ?', [id], (error, result) => {
+                if (error)
+                    throw error;
+                res.json(result);
+                /* res.status(404).json({text: "The person doesn't exists"}); */
+            });
         });
     }
     create(req, res) {
